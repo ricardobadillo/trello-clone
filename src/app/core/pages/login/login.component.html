@@ -1,0 +1,74 @@
+<div class="bg-gray-50 h-screen overflow-hidden relative w-screen">
+
+  <!-- Imágenes a los costados del login page -->
+  <div class="absolute h-full hidden md:block w-full">
+    <img class="absolute bottom-0 left-0 md:w-48 lg:w-64" src="/assets/svg/login-bg-left.svg" alt="bg left">
+    <img class="absolute bottom-0 right-0 md:w-48 lg:w-64" src="/assets/svg/login-bg-rigth.svg" alt="bg right">
+  </div>
+
+  <!-- Contenedor del login -->
+  <div class="m-auto h-screen relative w-3/4 md:w-2/5 lg:w-4/12">
+    <!-- Logo del encabezado del login -->
+    <header class="flex justify-center pt-6">
+      <img class="w-56" src="/assets/images/logo/logo-gradient-blue-trello.png" alt="logo">
+    </header>
+
+    <!-- Formulario -->
+    <div class="bg-white px-6 pb-1 pt-2 rounded shadow">
+      <div class="mb-4">
+        <h1 class="font-semibold pb-8 pt-4 text-center"> Log in in Trello </h1>
+
+        <form novalidate class="space-y-4">
+          <!-- Campo de email -->
+          <div class="relative">
+            <input class="bg-gray-100 border-gray-300 border-2 rounded w-full" placeholder="Enter email" type="email">
+          </div>
+
+          <!-- Campo de contraseña -->
+          <div class="relative">
+            <input class="bg-gray-100 border-gray-300 border-2 rounded w-full" placeholder="Enter password" type="password">
+          </div>
+
+          <!-- Botón de submit -->
+          <div>
+            <app-button [colorButton]="'success'" [typeButton]="'submit'"> Log in </app-button>
+          </div>
+
+          <hr class="bg-gray-500" [style.marginTop.rem]="2">
+
+          <!-- Botones para registrar cuenta -->
+          <div class="flex flex-col">
+            <a class="font-light pb-2 pt-1 text-blue-700 text-center text-base"> ¿No puede iniciar sesión </a>
+
+            <a class="font-light pb-2 pt-1 text-blue-700 text-center text-base"> Regístrese para crear una cuenta </a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Opciones fuera del login -->
+    <div class="flex justify-center mt-6">
+      <a class="font-thin mx-2 text-blue-700 text-xs"> Políticas de Privacidad </a>
+      <a class="font-thin mx-2 text-blue-700 text-xs"> Condiciones del Servicio </a>
+    </div>
+
+    <hr class="bg-gray-500 mt-4 mx-auto w-4/5">
+
+    <!-- Footer -->
+    <div class="my-8 relative">
+      <img class="mx-auto w-56" src="/assets/images/logo/logo-onecolor-blue-atlassian.png" alt="logo">
+
+      <div class="flex relative flex-wrap">
+        <p class=" font-thin text-gray-500 text-xs"> Plantillas </p>
+        <p class=" font-thin text-gray-500 text-xs"> Precios </p>
+        <p class=" font-thin text-gray-500 text-xs"> Aplicaciones </p>
+        <p class=" font-thin text-gray-500 text-xs"> Trabajos </p>
+        <p class=" font-thin text-gray-500 text-xs"> Blog </p>
+        <p class=" font-thin text-gray-500 text-xs"> Desarrolladores </p>
+        <p class=" font-thin text-gray-500 text-xs"> Acerca de </p>
+        <p class=" font-thin text-gray-500 text-xs"> Ayuda </p>
+        <p class=" font-thin text-gray-500 text-xs"> Configuración de las cookies </p>
+      </div>
+    </div>
+  </div>
+</div>

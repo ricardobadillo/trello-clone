@@ -1,0 +1,92 @@
+<!-- Navbar -->
+<nav class="bg-sky-700 border-gray-200 px-6 shadow-md">
+
+  <!-- Contenedor del contenido del navbar -->
+  <div class="items-center flex flex-wrap justify-between">
+
+    <!--- Lado izquiero del navbar-->
+    <div class="flex items-center">
+
+      <!-- Logo de Trello -->
+      <a routerLink="/">
+        <img class="w-20 mr-8" loading="lazy" src="/assets/images/logo/logo-gradient-white-trello.png" alt="logo" />
+      </a>
+
+      <!-- Items del navbar -->
+      <div class="items-center flex">
+        <ul class="flex font-medium items-center text-sm">
+          <li>
+            <a class="dark:hover:bg-sky-800 block py-3 px-4 text-white"> Workspaces </a>
+          </li>
+
+          <li>
+            <a class="dark:hover:bg-sky-800 block py-3 px-4 text-white"> Recent </a>
+          </li>
+
+          <li class="px-4">
+            <app-button [colorButton]="'primary'" [typeButton]="'button'"> Create </app-button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Lado derecho del navbar -->
+    <div class="items-center flex gap-x-4">
+      <button class="text-white" type="button">
+        <fa-icon [icon]="faBell"></fa-icon>
+      </button>
+
+      <button class="text-white" type="button">
+        <fa-icon [icon]="faInfoCircle"></fa-icon>
+      </button>
+
+      <button class="flex rounded-full" type="button" (click)="isOpen = !isOpen" cdkOverlayOrigin #menuOverlay="cdkOverlayOrigin">
+        <img class="h-8 rounded-full w-8" src="https://api.lorem.space/image/face?w=400&h=400" alt="user photo"/>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Overlay cuando haces click en la imagen de usuario -->
+<ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="menuOverlay" [cdkConnectedOverlayOpen]="isOpen">
+  <div class="bg-white divide-gray-100 divide-y list-none my-2 rounded shadow text-base w-60">
+    <!-- Header -->
+    <div class="flex justify-between px-4 py-3">
+      <span class="block text-sm text-center text-gray-900"> Cuenta </span>
+      <button class="block text-sm text-gray-900" (click)="isOpen = !isOpen">
+        x
+      </button>
+    </div>
+
+    <!-- Contenedor del card del perfil y las opciones -->
+    <div class="items-center flex px-4 py-3 space-x-4">
+      <!-- Imagen del perfil de usuario -->
+      <img class="h-10 rounded-full w-10 " src="https://api.lorem.space/image/face?w=400&h=400" alt="user photo"/>
+
+      <!-- Nombre del perfil de usuario -->
+      <div class="space-y-1">
+        <div> Ricardo Badillo </div>
+        <div class="text-gray-500 text-sm"> ricardo@gmail.com </div>
+      </div>
+    </div>
+
+    <!-- Opciones -->
+    <ul class="py-1">
+      <li *ngFor="let item of itemList">
+        <a class="dark:hover:bg-gray-200 block px-4 py-2 text-gray-700 text-sm" href="#">
+          {{ item.name }}
+        </a>
+      </li>
+    </ul>
+
+    <!-- Cerrar cesión -->
+    <ul class="py-1">
+      <li>
+        <a class="block px-4 py-2 text-gray-700 text-sm" href="#">
+          Log out
+        </a>
+      </li>
+    </ul>
+  </div>
+</ng-template>
+
